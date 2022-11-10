@@ -59,7 +59,7 @@ class Painting(QMainWindow):
             if self.sender().text() == self.color.split(')')[0]:
                 self.sender().setText('')
             else:
-                if self.color.split()[1] == 'Черный':
+                if self.color.split()[1] == 'Черный' or "Темно" in self.color.split()[1]:
                     self.sender().setStyleSheet(f"background-color:#{color_dict[self.color]}; color: white")
 
 
