@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QComboBo
 
 from game import Painting
 
+
 class MainWindow(QMainWindow):
     '''
     мы создаем класс главного окна
@@ -35,8 +36,6 @@ class MainWindow(QMainWindow):
 
         self.game = Painting(text)
         self.game.show()
-
-
 
 
 if __name__ == '__main__':
