@@ -1,10 +1,10 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QComboBox
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QComboBox, QMainWindow
 
 from game import Painting
 
-class MainWindow(QWidget):
+class MainWindow(QMainWindow):
     '''
     мы создаем класс главного окна
     '''
