@@ -34,7 +34,8 @@ class Painting(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(150, 150, 1000, 800)
+        self.setFixedSize(1000, 800)
+        self.move(150, 150)
         self.setWindowTitle("рисунок1")  # создаем размеры и название окна
 
         for i in range(20):  # создаем поле для рисования из кнопок
