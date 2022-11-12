@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QComboBox
 
+from game import Painting
 
 class MainWindow(QWidget):
     '''
@@ -21,33 +22,21 @@ class MainWindow(QWidget):
         self.label.move(10, 5)  # создаем текст приветствия
 
         self.spisok = QComboBox(self)  # мы создали выдающий список для выбора картины
-        self.spisok.addItem('текст13433434543')
-        self.spisok.addItem('текст2')
-        self.spisok.addItem('текст3')
-        self.spisok.addItem('текст4')
-        self.spisok.addItem('текст5')
-        self.spisok.addItem('текст6')
-        self.spisok.addItem('текст7')  # добавили варианты в наш список
+        self.spisok.addItem('Пикачу')
+        self.spisok.addItem('Вишня')
+        self.spisok.addItem('Панда')
+        self.spisok.addItem('Пирожное')
+        self.spisok.addItem('Овечка')  # добавили варианты в наш список
 
         self.spisok.move(10, 30)
         self.spisok.activated[str].connect(self.click)  # мы подключили наш виджет к функции
 
     def click(self, text):  # эта функция будет перекидывать нас на выбранный вариант
 
-        self.second_form = SecondForm(self, text)
-        self.second_form.show()
+        self.game = Painting(text)
+        self.game.show()
 
 
-class SecondForm(QWidget):
-    def __init__(self, *args):
-        super().__init__()
-        self.initUI(args)
-
-    def initUI(self, args):
-        self.setGeometry(300, 300, 300, 300)
-        self.setWindowTitle('Вторая форма')
-
-        self.lbl = QLabel(args[-1], self)
 
 
 if __name__ == '__main__':
