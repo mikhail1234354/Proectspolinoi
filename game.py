@@ -1,9 +1,8 @@
-import sys
-
-from PyQt5.QtWidgets import QWidget, QPushButton, QComboBox
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from Lib_of_game import *
 
 from pictures import data
+
+from about_us import About_us
 
 
 #
@@ -36,7 +35,6 @@ class Painting(QWidget):
     def __init__(self, text):  # инициализирем класс
         super().__init__()
         self.name_of_picture = text
-        print(self.name_of_picture)
         self.initUI()
 
     def initUI(self):
@@ -56,14 +54,23 @@ class Painting(QWidget):
                     self.button = QPushButton(button_list[i][j], self)
                     self.button.resize(30, 30)
                     self.button.move(100 + 28 * j, 100 + 28 * i)
-                    # print(type(button_list))
-                    # print(type(self.button))
+
                     self.button.clicked.connect(self.Draw)
 
         choose_color = QComboBox(self)  # создаем окно выбора цвета
         choose_color.addItems(self.color_dict.keys())
         choose_color.move(750, 120)
         choose_color.activated[str].connect(self.Activated)
+
+        self.btn = QPushButton('Об авторах', self)
+        self.btn.resize(self.btn.sizeHint())
+        self.btn.move(10, 10)
+
+        self.btn.clicked.connect(self.open_second_form)
+
+    def open_second_form(self):
+        self.second_form = About_us()
+        self.second_form.show()
 
     def Activated(self, text):  # функция считывает выбранный цвет
         self.color = text

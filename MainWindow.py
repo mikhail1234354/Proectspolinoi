@@ -1,6 +1,4 @@
-import sys
-
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QComboBox, QMainWindow
+from Lib_of_MainWindow import *
 
 from game import Painting
 
@@ -21,6 +19,7 @@ class MainWindow(QMainWindow):
         self.label = QLabel(self)
         self.label.setText("Выберите поле, на котором хотите рисовать:")
         self.label.move(10, 5)  # создаем текст приветствия
+        self.label.resize(270, 30)
 
         self.spisok = QComboBox(self)  # мы создали выдающий список для выбора картины
         self.spisok.addItem('Пикачу')
