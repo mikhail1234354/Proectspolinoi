@@ -34,20 +34,16 @@ from about_us import About_us
 class Painting(QWidget):
     def __init__(self, text):  # инициализирем класс
         super().__init__()
-        self.name_of_picture = text
+        self.name_of_picture = text # название картинки -> str
         self.initUI()
 
     def initUI(self):
         self.setFixedSize(1000, 800)
         self.move(150, 150)
         self.setWindowTitle("рисунок1")  # создаем размеры и название окна
-        button_list = data[self.name_of_picture][0]
-        self.color_dict = data[self.name_of_picture][1]
-        # n = 20
-        '''if self.name_of_picture == 'Пирожное':
-            n = 18
-        elif self.name_of_picture == 'Овечка':
-            n = 19'''
+        button_list = data[self.name_of_picture][0] # выбираем нужный список кнопок
+        self.color_dict = data[self.name_of_picture][1] # выбираем нужный словарь цветов
+
         for i in range(20):  # создаем поле для рисования из кнопок
             for j in range(20):
                 if button_list[i][j] != '0':
@@ -62,13 +58,13 @@ class Painting(QWidget):
         choose_color.move(750, 120)
         choose_color.activated[str].connect(self.Activated)
 
-        self.btn = QPushButton('Об авторах', self)
+        self.btn = QPushButton('Об авторах', self) # добавляем кнопку про авторов
         self.btn.resize(self.btn.sizeHint())
         self.btn.move(10, 10)
 
         self.btn.clicked.connect(self.open_second_form)
 
-    def open_second_form(self):
+    def open_second_form(self): # функция вызывает окно с информацией про авторов
         self.second_form = About_us()
         self.second_form.show()
 
