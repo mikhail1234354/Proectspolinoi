@@ -33,9 +33,8 @@ class About_us(QWidget):  # инициализируем класс
         self.text2.setText("Лучшая программистка на свете")
         self.text2.setFont(QFont("Times", 16))
 
-        self.text3 = QLabel(self)  # И еще один текст, про то какие мы молодцы
+        self.text3 = QLabel(self)  # И еще один текст, про то, какие мы молодцы
         self.text3.move(100, 630)
-        self.text3.setText("Эти прекрасные люди трудились над созданием этого " + '\n'
-                                                                                  "приложения, согласитесь, они милашки")
+        self.text3.setText("Эти прекрасные люди трудились над созданием этого" + '\n'
+                                                                                 "приложения, согласитесь, они милашки")
         self.text3.setFont(QFont("Times", 20))
-

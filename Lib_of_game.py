@@ -1,4 +1,4 @@
 import sys
 
 from PyQt5.QtWidgets import QWidget, QPushButton, QComboBox
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QApplication

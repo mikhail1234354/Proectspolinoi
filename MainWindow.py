@@ -2,6 +2,8 @@ from Lib_of_MainWindow import *
 
 from game import Painting
 
+from about_us import About_us
+
 
 class MainWindow(QMainWindow):
     '''
@@ -31,6 +33,16 @@ class MainWindow(QMainWindow):
         self.spisok.move(10, 30)
         self.spisok.activated[str].connect(self.click)  # мы подключили наш виджет к функции
 
+        self.btn = QPushButton('Об авторах', self)  # добавляем кнопку про авторов
+        self.btn.resize(self.btn.sizeHint())
+        self.btn.move(150, 30)
+
+        self.btn.clicked.connect(self.open_second_form)
+
+    def open_second_form(self):  # функция вызывает окно с информацией про авторов
+        self.second_form = About_us()
+        self.second_form.show()
+
     def click(self, text):  # эта функция будет перекидывать нас на выбранный вариант
 
         self.game = Painting(text)
@@ -42,4 +54,3 @@ if __name__ == '__main__':
     ex = MainWindow()
     ex.show()
     sys.exit(app.exec())
-
