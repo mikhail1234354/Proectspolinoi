@@ -30,7 +30,11 @@ class MainWindow(QMainWindow):
         self.spisok.addItem('Пирожное')
         self.spisok.addItem('Овечка')
         self.spisok.addItem('Лемон')
-        self.spisok.addItem('Шоколадка')  # добавили варианты в наш список
+        self.spisok.addItem('Шоколадка')
+        self.spisok.addItem('Стич')
+        self.spisok.addItem('Киви')
+        self.spisok.addItem('Пандочка')
+        # добавили варианты в наш список
 
         self.spisok.move(10, 30)
         self.spisok.activated[str].connect(self.click)  # мы подключили наш виджет к функции
