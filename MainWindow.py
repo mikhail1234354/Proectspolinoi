@@ -28,14 +28,20 @@ class MainWindow(QMainWindow):
         self.spisok.addItem('Вишня')
         self.spisok.addItem('Панда')
         self.spisok.addItem('Пирожное')
-        self.spisok.addItem('Овечка')  # добавили варианты в наш список
+        self.spisok.addItem('Овечка')
+        self.spisok.addItem('Лемон')
+        self.spisok.addItem('Шоколадка')
+        self.spisok.addItem('Стич')
+        self.spisok.addItem('Киви')
+        self.spisok.addItem('Пандочка')
+        # добавили варианты в наш список
 
         self.spisok.move(10, 30)
         self.spisok.activated[str].connect(self.click)  # мы подключили наш виджет к функции
 
         self.btn = QPushButton('Об авторах', self)  # добавляем кнопку про авторов
         self.btn.resize(self.btn.sizeHint())
-        self.btn.move(150, 30)
+        self.btn.move(380, 20)
 
         self.btn.clicked.connect(self.open_second_form)
 

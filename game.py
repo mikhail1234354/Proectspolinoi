@@ -37,7 +37,7 @@ class Painting(QWidget):
 
         self.btn = QPushButton('Об авторах', self)  # добавляем кнопку про авторов
         self.btn.resize(self.btn.sizeHint())
-        self.btn.move(500, 80)
+        self.btn.move(30, 20)
 
         self.btn.clicked.connect(self.open_second_form)
 
